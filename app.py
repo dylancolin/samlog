@@ -9,11 +9,12 @@ from models import db, User, Auth
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:yarakhuda@127.0.0.1:5432/samlog'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://dbuser:dbpass@host:port/dbname'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 
+'''
 @app.cli.command('resetdb')
 def resetdb_command():
 	"""Destroys and creates the database + tables."""
@@ -29,7 +30,7 @@ def resetdb_command():
 	print('Creating tables.')
 	db.create_all()
 	print('Shiny!')
-
+'''
 
 
 
@@ -127,7 +128,6 @@ def get_logs():
 @app.route('/<path:path>')
 def catch_all(path):
 	return render_template('index.html')
-	#return 'You want path: %s' % path
 
 
 
