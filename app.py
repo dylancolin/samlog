@@ -9,7 +9,7 @@ from models import db, User, Auth
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://dbuser:dbpass@host:port/dbname'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://cgksierrdmlnzu:ef2b8416d7b0bf166aa0a4a70d5a73eb0050a8b056c6dd18770ae85892654395@ec2-54-221-236-144.compute-1.amazonaws.com:5432/dflipfvfuvtjtm'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
